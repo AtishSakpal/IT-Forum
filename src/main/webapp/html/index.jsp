@@ -18,7 +18,7 @@
     <script type="text/javascript">
         function addToDatalist(value, elem, data) {
             $(elem).append("<option data-id=" + value.id + " value=" + value.name + "></option>");
-            var index = data.selected.indexOf(value);
+            let index = data.selected.indexOf(value);
             data.selected.splice(index, 1);
             data.datalist.push(value);
         }
@@ -48,7 +48,7 @@
                     $("#user_alert").append("<div class='tag_holder' style='margin-left:10px'><div class='alert alert-info'><strong>"
                         + value.name +
                         "</strong><button type='button' class='close' data-dismiss='alert' >&times;</button></div></div>");
-                    var curr = $("#user_alert").children().last();
+                    let curr = $("#user_alert").children().last();
                     curr.find(".close").on("click", _ => {
                         $(this).parentsUntil(".tag_holder").remove();
                         addToDatalist(value, elem, data);
@@ -59,7 +59,7 @@
             }
         };
         $(document).ready(function(){
-            var login=1;
+            let login=1;
             document.body.onunload= function(){
                 localStorage.setItem("login",login);
             }
